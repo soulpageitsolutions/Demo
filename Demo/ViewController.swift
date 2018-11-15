@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     var petitions = [[String: String]]()
+    
+    @IBOutlet weak var nameLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         callAPIService()
