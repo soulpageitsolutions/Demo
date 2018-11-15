@@ -16,7 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         callAPIService()
         //requestTranscribePermissions()
-       // print(UIApplication.appVersion!)
+        print(UIApplication.appVersion!)
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
