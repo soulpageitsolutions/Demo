@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E08C29E21ACFF4400897688 /* listCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E08C29D21ACFF4400897688 /* listCustomCell.xib */; };
+		9E08C2A021AD008700897688 /* listCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E08C29F21AD008700897688 /* listCustomCell.swift */; };
+		9E08C2A221AD09B800897688 /* Datamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E08C2A121AD09B800897688 /* Datamodel.swift */; };
+		9E09F0FB21AE49CF007B9C35 /* SecondVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E09F0FA21AE49CF007B9C35 /* SecondVc.swift */; };
+		9E12D1A921BF948B00196015 /* Nusik.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9E12D1A821BF948B00196015 /* Nusik.jpg */; };
 		9ED34E3421845E7100816D76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED34E3321845E7100816D76 /* AppDelegate.swift */; };
 		9ED34E3621845E7100816D76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED34E3521845E7100816D76 /* ViewController.swift */; };
 		9ED34E3921845E7100816D76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED34E3721845E7100816D76 /* Main.storyboard */; };
@@ -14,6 +19,8 @@
 		9ED34E3E21845E7200816D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ED34E3C21845E7200816D76 /* LaunchScreen.storyboard */; };
 		9ED34E4921845E7200816D76 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED34E4821845E7200816D76 /* DemoTests.swift */; };
 		9ED34E5421845E7200816D76 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED34E5321845E7200816D76 /* DemoUITests.swift */; };
+		9EF436C321B2B5EB0099C98F /* download.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9EF436C221B2B5EB0099C98F /* download.jpeg */; };
+		9EFB38A221A82AAD009D6F72 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFB38A121A82AAD009D6F72 /* Extensions.swift */; };
 		F37A8534226C2BE095CCE702 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3C1FC0FDD74F603A3E88FE /* Pods_Demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +43,13 @@
 
 /* Begin PBXFileReference section */
 		1C3C1FC0FDD74F603A3E88FE /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E08C29D21ACFF4400897688 /* listCustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = listCustomCell.xib; sourceTree = "<group>"; };
+		9E08C29F21AD008700897688 /* listCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listCustomCell.swift; sourceTree = "<group>"; };
+		9E08C2A121AD09B800897688 /* Datamodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datamodel.swift; sourceTree = "<group>"; };
+		9E09F0FA21AE49CF007B9C35 /* SecondVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVc.swift; sourceTree = "<group>"; };
+		9E09F0FE21AE6247007B9C35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		9E09F0FF21AE6247007B9C35 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9E12D1A821BF948B00196015 /* Nusik.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nusik.jpg; sourceTree = "<group>"; };
 		9ED34E3021845E7100816D76 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED34E3321845E7100816D76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ED34E3521845E7100816D76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +64,8 @@
 		9ED34E5321845E7200816D76 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		9ED34E5521845E7200816D76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EDDAAC24C090C38B0C276D3 /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		9EF436C221B2B5EB0099C98F /* download.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = download.jpeg; sourceTree = "<group>"; };
+		9EFB38A121A82AAD009D6F72 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D4FF109D8ACA1E876AB33BC8 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,12 +129,19 @@
 		9ED34E3221845E7100816D76 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				9E12D1A821BF948B00196015 /* Nusik.jpg */,
+				9EF436C221B2B5EB0099C98F /* download.jpeg */,
+				9EFB38A021A82A93009D6F72 /* Extensions */,
 				9ED34E3321845E7100816D76 /* AppDelegate.swift */,
 				9ED34E3521845E7100816D76 /* ViewController.swift */,
 				9ED34E3721845E7100816D76 /* Main.storyboard */,
 				9ED34E3A21845E7200816D76 /* Assets.xcassets */,
 				9ED34E3C21845E7200816D76 /* LaunchScreen.storyboard */,
 				9ED34E3F21845E7200816D76 /* Info.plist */,
+				9E08C29D21ACFF4400897688 /* listCustomCell.xib */,
+				9E08C29F21AD008700897688 /* listCustomCell.swift */,
+				9E08C2A121AD09B800897688 /* Datamodel.swift */,
+				9E09F0FA21AE49CF007B9C35 /* SecondVc.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -139,6 +162,14 @@
 				9ED34E5521845E7200816D76 /* Info.plist */,
 			);
 			path = DemoUITests;
+			sourceTree = "<group>";
+		};
+		9EFB38A021A82A93009D6F72 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9EFB38A121A82AAD009D6F72 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CB5CB780E88932087CD3064E /* Frameworks */ = {
@@ -255,9 +286,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E08C29E21ACFF4400897688 /* listCustomCell.xib in Resources */,
 				9ED34E3E21845E7200816D76 /* LaunchScreen.storyboard in Resources */,
 				9ED34E3B21845E7200816D76 /* Assets.xcassets in Resources */,
 				9ED34E3921845E7100816D76 /* Main.storyboard in Resources */,
+				9E12D1A921BF948B00196015 /* Nusik.jpg in Resources */,
+				9EF436C321B2B5EB0099C98F /* download.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,16 +317,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SafeAreaExtension/SafeAreaExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SafeAreaExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,15 +339,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Demo-checkManifestLockResult.txt",
 			);
@@ -329,7 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E08C2A221AD09B800897688 /* Datamodel.swift in Sources */,
 				9ED34E3621845E7100816D76 /* ViewController.swift in Sources */,
+				9EFB38A221A82AAD009D6F72 /* Extensions.swift in Sources */,
+				9E08C2A021AD008700897688 /* listCustomCell.swift in Sources */,
+				9E09F0FB21AE49CF007B9C35 /* SecondVc.swift in Sources */,
 				9ED34E3421845E7100816D76 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +404,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9ED34E3821845E7100816D76 /* Base */,
+				9E09F0FE21AE6247007B9C35 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -378,6 +413,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9ED34E3D21845E7200816D76 /* Base */,
+				9E09F0FF21AE6247007B9C35 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -389,6 +425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -449,6 +486,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -506,14 +544,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.Demo;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -524,14 +564,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.Demo;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

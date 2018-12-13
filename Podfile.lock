@@ -1,16 +1,26 @@
 PODS:
+  - SafeAreaExtension (0.1.0)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - SafeAreaExtension
+  - SDWebImage (~> 4.0)
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - SafeAreaExtension
+    - SDWebImage
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  SafeAreaExtension: 35aecc1ce95c96489c845b37a97050b127178982
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: e8681954c0a24730c67cbfac54973ee85099753a
+PODFILE CHECKSUM: 525d8bdc260bbe31bd252d5e3d9a0090583ce37f
 
 COCOAPODS: 1.5.3
