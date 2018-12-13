@@ -14,6 +14,7 @@ struct Datamodel {
     var body = String()
     var sigs = String()
     var url  = String()
+    var name = String()
 
     public mutating func fromJsonToString(result: JSON) {
             title = result["title"].stringValue
