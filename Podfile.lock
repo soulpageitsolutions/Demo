@@ -1,26 +1,34 @@
 PODS:
+  - Alamofire (4.7.3)
   - SafeAreaExtension (0.1.0)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - SVProgressHUD (2.2.5)
   - SwiftyJSON (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.7)
   - SafeAreaExtension
   - SDWebImage (~> 4.0)
+  - SVProgressHUD
   - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - SafeAreaExtension
     - SDWebImage
+    - SVProgressHUD
     - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   SafeAreaExtension: 35aecc1ce95c96489c845b37a97050b127178982
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
 
-PODFILE CHECKSUM: 525d8bdc260bbe31bd252d5e3d9a0090583ce37f
+PODFILE CHECKSUM: 980032f22ffb328d1c85f76765396bb94284c2c5
 
 COCOAPODS: 1.5.3

@@ -7,4 +7,6 @@ target 'Demo' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'SafeAreaExtension'
     pod 'SDWebImage', '~> 4.0'
+    pod 'SVProgressHUD'
+    pod 'Alamofire', '~> 4.7'
   end

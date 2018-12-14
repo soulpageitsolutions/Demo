@@ -7,7 +7,9 @@
 //
 
 import UIKit
-        
+import Alamofire
+import SwiftyJSON
+
 
 class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     var imagePicker = UIImagePickerController()
@@ -116,6 +118,7 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
             imageView.image = image
             // do something with image
         }
+        runApiService()
         //deleteTheProfilePic()
         // Do any additional setup after loading the view.
     }
@@ -150,6 +153,35 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         }
         catch let error as NSError {
             print("An error took place: \(error)")
+        }
+    }
+    func runApiService(){
+        Alamofire.request("https://api.whitehouse.gov/v1/petitions.json?limit=100", parameters: ["":""], headers: ["":""])
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseJSON { response in
+//                print("Request: \(String(describing: response.request))")   // original url request
+//                print("Response: \(String(describing: response.response))") // http url response
+//                print("Result: \(response.result)")                         // response serialization result
+//
+                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                   // print("Data: \(utf8Text)") // original server data as UTF8 string
+                    do{
+                        // Get json data
+                        //let json = try JSON(data: data)
+                        let jsonString = String(decoding: data, as: UTF8.self)
+                        let json = JSON(parseJSON: jsonString)
+                        self.parse(json: json)
+                    }catch{
+                        print("Unexpected error: \(error).")
+                    }
+                }
+        }
+    }
+    func parse(json: JSON) {
+        for result in json["results"].arrayValue {
+            var title =  result["title"].stringValue
+            print("title is ",title)
         }
     }
 

@@ -13,6 +13,7 @@ import SwiftyJSON
 import SafeAreaExtension
 import Photos
 import SDWebImage
+import SVProgressHUD
 
 class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
   
@@ -44,6 +45,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
         self.listTableView.addSubview(refreshControl)
         
         if ReachabilityTest.isConnectedToNetwork() {
+            SVProgressHUD.show()
             callAPIService()
         } else {
             //listTableView.isHidden = true
@@ -101,7 +103,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
     }
     func parse(json: JSON) {
          dataModel = [Datamodel]()
-            dataSearchList = [Datamodel]()
+         dataSearchList = [Datamodel]()
          for result in json["results"].arrayValue {
             var datamodel = Datamodel()
             datamodel.fromJsonToString(result: result)
@@ -109,6 +111,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
             dataSearchList.append(datamodel)
         }
         listTableView.reloadData()
+        SVProgressHUD.dismiss()
         refreshControl.endRefreshing()
         
     }
@@ -145,6 +148,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
                 }
             }
             listTableView.reloadData()
+            SVProgressHUD.dismiss()
             refreshControl.endRefreshing()
             print("search text:",newString)
         }
