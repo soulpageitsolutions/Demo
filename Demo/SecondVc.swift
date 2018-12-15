@@ -151,15 +151,14 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
             .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseJSON { response in
-//                print("Request: \(String(describing: response.request))")   // original url request
-//                print("Response: \(String(describing: response.response))") // http url response
-//                print("Result: \(response.result)")                         // response serialization result
+                print("Request: \(String(describing: response.request))")   // original url request
+                print("Response: \(String(describing: response.response))") // http url response
+                print("Result: \(response.result)")                         // response serialization result
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                    // print("Data: \(utf8Text)") // original server data as UTF8 string
                     do{
 //                         Get json data
 //                        let json = try JSON(data: data)
-//                        let jsonString = String(decoding: data, as: UTF8.self)
                         let json = JSON(parseJSON: utf8Text)
                         self.parse(json: json)
                     }
