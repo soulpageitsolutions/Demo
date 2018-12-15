@@ -54,8 +54,6 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
             let alert  = UIAlertController(title: "Warning", message: "You don't have camera", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
-            
         }
     }
     func openGallary()
@@ -102,14 +100,6 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
             // is not iPhoneX
         }
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        if UIDevice.isIphoneX {
-//            view.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.width, height: view.frame.height - (view.safeAreaInsets.bottom + view.safeAreaInsets.top))
-//        } else {
-//            // is not iPhoneX
-//        }
-//    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -119,6 +109,7 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
             // do something with image
         }
         runApiService()
+        
         //deleteTheProfilePic()
         // Do any additional setup after loading the view.
     }
@@ -163,16 +154,16 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
 //                print("Request: \(String(describing: response.request))")   // original url request
 //                print("Response: \(String(describing: response.response))") // http url response
 //                print("Result: \(response.result)")                         // response serialization result
-//
                 if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                    // print("Data: \(utf8Text)") // original server data as UTF8 string
                     do{
-                        // Get json data
-                        //let json = try JSON(data: data)
-                        let jsonString = String(decoding: data, as: UTF8.self)
-                        let json = JSON(parseJSON: jsonString)
+//                         Get json data
+//                        let json = try JSON(data: data)
+//                        let jsonString = String(decoding: data, as: UTF8.self)
+                        let json = JSON(parseJSON: utf8Text)
                         self.parse(json: json)
-                    }catch{
+                    }
+                    catch {
                         print("Unexpected error: \(error).")
                     }
                 }
@@ -180,11 +171,10 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     }
     func parse(json: JSON) {
         for result in json["results"].arrayValue {
-            var title =  result["title"].stringValue
-            print("title is ",title)
+            let title =  result["title"].stringValue
+            print("title is: ",title)
         }
     }
-
     /*
     // MARK: - Navigation
 
@@ -194,5 +184,4 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         // Pass the selected object to the new view controller.
     }
     */
-
 }

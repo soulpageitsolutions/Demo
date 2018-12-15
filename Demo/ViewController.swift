@@ -43,7 +43,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
         refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         self.listTableView.addSubview(refreshControl)
-        
         if ReachabilityTest.isConnectedToNetwork() {
             SVProgressHUD.show()
             callAPIService()
@@ -79,15 +78,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
             // is not iPhoneX
         }
     }
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        if UIDevice.isIphoneX {
-//            view.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.width, height: view.frame.height - (view.safeAreaInsets.bottom + view.safeAreaInsets.top))
-//        } else {
-//            // is not iPhoneX
-//        }
-//       
-//    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
