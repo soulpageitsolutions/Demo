@@ -104,6 +104,41 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		9E15D78A21D9ED670055EA2B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9ED34E3521845E7100816D76 /* ViewController.swift */,
+				9E09F0FA21AE49CF007B9C35 /* SecondVc.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9E15D78B21D9ED940055EA2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E08C2A121AD09B800897688 /* Datamodel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9E15D78C21D9EDB90055EA2B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9E12D1A821BF948B00196015 /* Nusik.jpg */,
+				9EF436C221B2B5EB0099C98F /* download.jpeg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		9E15D78D21D9EDD70055EA2B /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				9E08C29F21AD008700897688 /* listCustomCell.swift */,
+				9E08C29D21ACFF4400897688 /* listCustomCell.xib */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		9ED34E2721845E7100816D76 = {
 			isa = PBXGroup;
 			children = (
@@ -129,19 +164,16 @@
 		9ED34E3221845E7100816D76 /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				9E12D1A821BF948B00196015 /* Nusik.jpg */,
-				9EF436C221B2B5EB0099C98F /* download.jpeg */,
-				9EFB38A021A82A93009D6F72 /* Extensions */,
 				9ED34E3321845E7100816D76 /* AppDelegate.swift */,
-				9ED34E3521845E7100816D76 /* ViewController.swift */,
+				9E15D78D21D9EDD70055EA2B /* CustomViews */,
+				9E15D78C21D9EDB90055EA2B /* Images */,
+				9E15D78B21D9ED940055EA2B /* Model */,
+				9E15D78A21D9ED670055EA2B /* Controllers */,
+				9EFB38A021A82A93009D6F72 /* Extensions */,
 				9ED34E3721845E7100816D76 /* Main.storyboard */,
 				9ED34E3A21845E7200816D76 /* Assets.xcassets */,
 				9ED34E3C21845E7200816D76 /* LaunchScreen.storyboard */,
 				9ED34E3F21845E7200816D76 /* Info.plist */,
-				9E08C29D21ACFF4400897688 /* listCustomCell.xib */,
-				9E08C29F21AD008700897688 /* listCustomCell.swift */,
-				9E08C2A121AD09B800897688 /* Datamodel.swift */,
-				9E09F0FA21AE49CF007B9C35 /* SecondVc.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -192,6 +224,7 @@
 				9ED34E2D21845E7100816D76 /* Frameworks */,
 				9ED34E2E21845E7100816D76 /* Resources */,
 				5C40319FF7113305D3C38321 /* [CP] Embed Pods Frameworks */,
+				9E1C025621C8ED8000691FB1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,13 +283,16 @@
 				TargetAttributes = {
 					9ED34E2F21845E7100816D76 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					9ED34E4321845E7200816D76 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 9ED34E2F21845E7100816D76;
 					};
 					9ED34E4E21845E7200816D76 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = 9ED34E2F21845E7100816D76;
 					};
 				};
@@ -322,7 +358,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SafeAreaExtension/SafeAreaExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -330,7 +365,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SafeAreaExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +389,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9E1C025621C8ED8000691FB1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/\"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)\"",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 42bf49582d4c81028fb5ada47362f15edadb0b20 7542d6fae1b12584cdc7c05b5c95a8b9a5993d5100c390e9e3b6d9a4c5b7ffad\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -547,6 +599,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -555,8 +608,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.Demo;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PRODUCT_NAME = Demo;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -575,8 +628,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.Demo;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PRODUCT_NAME = Demo;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -595,7 +648,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
@@ -615,7 +668,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.DemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Demo.app/Demo";
 			};
@@ -634,7 +687,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Demo;
 			};
@@ -653,7 +706,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulpage.DemoUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Demo;
 			};

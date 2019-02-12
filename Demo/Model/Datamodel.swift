@@ -14,12 +14,12 @@ struct Datamodel {
     var body = String()
     var sigs = String()
     var url  = String()
-    var name = String()
 
     public mutating func fromJsonToString(result: JSON) {
             title = result["title"].stringValue
             body = result["body"].stringValue
-            sigs = result["signatureCount"].stringValue
             url = result["url"].stringValue
+           // url = result["gender"].stringValue
     }
 }
+

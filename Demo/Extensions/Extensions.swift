@@ -34,7 +34,7 @@ extension UIDevice {
     }
 }
 extension UIImageView {
-    func downloadedFromurl(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFromurl(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard
@@ -48,7 +48,7 @@ extension UIImageView {
             }
             }.resume()
     }
-    func downloadedFromurl(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    func downloadedFromurl(link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFromurl(url: url, contentMode: mode)
     }

@@ -10,35 +10,38 @@ import UIKit
 import Foundation
 import Speech
 import SwiftyJSON
-import SafeAreaExtension
 import Photos
 import SDWebImage
 import SVProgressHUD
+import Crashlytics
 
-class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate {
+
+class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate {
   
     var dataModel = [Datamodel]()
     var dataSearchList = [Datamodel]()
     var refreshControl = UIRefreshControl()
-
+    var hasTopNotch: Bool {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+            return UIApplication.shared.delegate?.window??.safeAreaInsets.top ?? 0 > 20
+        }
+        return false
+    }
     
     @IBOutlet weak var searchTextFld: UITextField!
     @IBOutlet weak var listTableView: UITableView!
-    
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var nameLable: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let bundle = Bundle(for: self.classForCoder)
         let nib = UINib(nibName: "listCustomCell", bundle: bundle)
         listTableView.register(nib, forCellReuseIdentifier: "Cell")
         self.listTableView.delegate = self
         self.listTableView.dataSource = self
         self.searchTextFld.delegate = self
-        
         
         refreshControl.attributedTitle = NSAttributedString(string: "Loading...")
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
@@ -58,6 +61,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
     }
     @objc func refreshData() {
         if ReachabilityTest.isConnectedToNetwork() {
+            searchTextFld.text = ""
             callAPIService()
         } else {
             //listTableView.isHidden = true
@@ -66,14 +70,14 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
             DispatchQueue.main.async(execute: {
                 self.present(alert, animated: true)
             })
-            print("App Version is:",UIApplication.appVersion!)
+                print("App Version is:",UIApplication.appVersion!)
         }
         // Code to refresh table view
     }
     override func viewDidAppear(_ animated: Bool) {
-        if UIDevice.isIphoneX {
+        if hasTopNotch {
             view.frame = CGRect(x: 0, y: view.safeAreaInsets.top, width: view.frame.width, height: view.frame.height - (view.safeAreaInsets.bottom + view.safeAreaInsets.top))
-            print("iphone X")
+            print("iphone X Family")
         } else {
             // is not iPhoneX
         }
@@ -84,6 +88,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
     }
     func callAPIService(){
         let urlString = "https://api.whitehouse.gov/v1/petitions.json?limit=100"
+        //"https://api.androidhive.info/contacts/"
         if let url = URL(string: urlString) {
             if let data = try? String(contentsOf: url) {
                 let json = JSON(parseJSON: data)
@@ -103,7 +108,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
         listTableView.reloadData()
         SVProgressHUD.dismiss()
         refreshControl.endRefreshing()
-        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return  dataModel.count
@@ -113,27 +117,29 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
         cell.nameLabel.text = dataModel[indexPath.row].title
         cell.countLabel.text = dataModel[indexPath.row].body
         cell.urlLabel.text = dataModel[indexPath.row].url
-        let url = URL(string: "https://splashbase.s3.amazonaws.com/unsplash/regular/tumblr_mnh0n9pHJW1st5lhmo1_1280.jpg")!
+        let url = URL(string:"https://httpbin.org/image/png")!
+//        https://splashbase.s3.amazonaws.com/unsplash/regular/SVProgressHUD.jpg
         cell.sampleImageView.sd_setImage(with: url, placeholderImage:UIImage(named: "download.jpeg"))
         //cell.sampleImageView.downloadedFromurl(url: url)
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("cell text:",self.dataModel[indexPath.row].title)
         let indexPath = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
         let index = indexPath?.row
         print("index path value is",index!)
-        let currentCell = tableView.cellForRow(at: indexPath!) as! listCustomCell
-        
+//        let currentCell = tableView.cellForRow(at: indexPath!) as! listCustomCell
         let secondVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVc") as! SecondVc
         self.navigationController?.pushViewController(secondVC, animated: true)
+        
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let newString = NSString(string: textField.text!).replacingCharacters(in: range, with: string)
         if((newString.count) != 0){
             dataModel = [Datamodel]()
             for i in 0 ..< dataSearchList.count{
-                if((dataSearchList[i].title.lowercased().contains(newString.lowercased())) || (dataSearchList[i].sigs.contains(newString))){
+                if((dataSearchList[i].title.lowercased().contains(newString.lowercased())) || (dataSearchList[i].url.contains(newString))){
                     dataModel.append(dataSearchList[i])
                 }
             }
@@ -146,7 +152,11 @@ class ViewController: UIViewController,UITextFieldDelegate,UITableViewDataSource
     }
     @IBAction func nextScreenBtnAction(_ sender: Any) {
         refreshControl.endRefreshing()
+        SVProgressHUD.dismiss()
         let secondVC =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondVc") as! SecondVc
         self.navigationController?.pushViewController(secondVC, animated: true)
     }
+   
 }
+
+
