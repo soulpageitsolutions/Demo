@@ -135,24 +135,24 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
         }
     }
     func runApiService(){
-        Alamofire.request("https://api.whitehouse.gov/v1/petitions.json?limit=100", parameters: ["":""], headers: ["":""]   )
-            .validate(statusCode: 200..<300)
-            //validate(contentType: ["application/json"])
+        Alamofire.request("https://api.whitehouse.gov/v1/petitions.json?limit=100",method:.get, parameters: ["":""], encoding: JSONEncoding.default)
+            
             .responseJSON { response in
-                print("Request: \(String(describing: response.request!))")   // original url request
-                print("Response: \(String(describing: response.response))") // http url response
-                print("Result: \(response.result)")                         // response serialization result
-                if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                   // print("Data: \(utf8Text)") // original server data as UTF8 string
-                    do{
-//                         Get json data
-//                        let json = try JSON(data: data)
-                        let json = JSON(parseJSON: utf8Text)
-                        self.parse(json: json)
-                    }
-                    catch {
-                        print("Unexpected error: \(error).")
-                    }
+                print("Request: \(String(describing: response.request!))")
+                print("Response: \(String(describing: response.response))")
+               // print("Result: \(response.result)")
+                if(response.result.isSuccess){
+                   print("success")
+                   if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
+                           do{
+                              let json = try JSON(data: data)
+                                self.parse(json: json)
+                            } catch {
+                                print("Unexpected error: \(error).")
+                            }
+                }
+            } else {
+                    print("error\(response.result.error!)")
                 }
         }
     }
@@ -164,7 +164,7 @@ class SecondVc: UIViewController,UIImagePickerControllerDelegate,UINavigationCon
     }
     // MARK: - Navigation
      @IBAction func backBtAction(_ sender: Any) {
-     self.navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
      }
      // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

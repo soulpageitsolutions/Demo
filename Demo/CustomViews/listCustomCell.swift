@@ -20,7 +20,7 @@ class listCustomCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        sampleImageView.setRounded()
+        //sampleImageView.setRounded()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
